@@ -1,0 +1,461 @@
+{
+    "info": {
+        "_postman_id": "12c13f5c-e9a3-4b5e-ab22-075ebd8b7bf3",
+        "name": "no-q--solution",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [{
+            "name": "Merchant",
+            "item": [{
+                    "name": "Get All Merchant",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "localhost:8080/merchant/get_all?paginator={\"page\":1, \"size\":10}",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "merchant",
+                                "get_all"
+                            ],
+                            "query": [{
+                                "key": "paginator",
+                                "value": "{\"page\":1, \"size\":10}"
+                            }]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Categories",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "localhost:8080/merchant/get_categories",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "merchant",
+                                "get_categories"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Merchants By Category",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "localhost:8080/merchant/get_by_category/Health",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "merchant",
+                                "get_by_category",
+                                "Health"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Single Merchant",
+                    "request": {
+                        "method": "GET",
+                        "header": [{
+                            "key": "Authorization",
+                            "value": "Bearer a9d7e177-a443-4d80-b40b-fac1fef37adb",
+                            "type": "default"
+                        }],
+                        "url": {
+                            "raw": "localhost:8080/merchant/get_single",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "merchant",
+                                "get_single"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Search Merchant By Name",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "localhost:8080/merchant/search/cd",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "merchant",
+                                "search",
+                                "cd"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Merchant",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"XYZ\",\n    \"category\": \"health\",\n    \"email\": \"xyz@gmail.com\",\n    \"password\": \"123\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "localhost:8080/merchant/create",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "merchant",
+                                "create"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"xyz@gmail.com\",\n    \"password\": \"123\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "localhost:8080/merchant/login",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "merchant",
+                                "login"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Logout",
+                    "request": {
+                        "method": "GET",
+                        "header": [{
+                            "key": "Authorization",
+                            "value": "Bearer 19abca84-96e5-40d1-b0d8-1fa20056e118",
+                            "type": "default"
+                        }],
+                        "url": {
+                            "raw": "localhost:8080/merchant/logout",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "merchant",
+                                "logout"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Merchant",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [{
+                            "key": "Authorization",
+                            "value": "Bearer a9d7e177-a443-4d80-b40b-fac1fef37adb",
+                            "type": "default"
+                        }],
+                        "url": {
+                            "raw": "localhost:8080/merchant/delete",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "merchant",
+                                "delete"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Queue",
+            "item": [{
+                    "name": "Get Queues of a Merchant",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "localhost:8080/queue/get_by_merchant/11",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "queue",
+                                "get_by_merchant",
+                                "11"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Slots By Date",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "localhost:8080/queue/get_slots_by_date/2/cd",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "queue",
+                                "get_slots_by_date",
+                                "2",
+                                "cd"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Make Queue Available",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [{
+                            "key": "Authorization",
+                            "value": "Bearer b2ac5bfe-7d04-455b-870d-6e994da42008",
+                            "type": "default"
+                        }],
+                        "url": {
+                            "raw": "localhost:8080/queue/make_it_available/2",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "queue",
+                                "make_it_available",
+                                "2"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Make Queue Un Available",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [{
+                            "key": "Authorization",
+                            "value": "Bearer b2ac5bfe-7d04-455b-870d-6e994da42008",
+                            "type": "default"
+                        }],
+                        "url": {
+                            "raw": "localhost:8080/queue/make_it_un_available/2",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "queue",
+                                "make_it_un_available",
+                                "2"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Make Dates UnAvailable",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [{
+                            "key": "Authorization",
+                            "value": "Bearer b2ac5bfe-7d04-455b-870d-6e994da42008",
+                            "type": "default"
+                        }],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"dates\": []\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "localhost:8080/queue/make_dates_un_available/2",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "queue",
+                                "make_dates_un_available",
+                                "2"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Make Dates Available",
+                    "request": {
+                        "method": "POST",
+                        "header": [{
+                            "key": "Authorization",
+                            "value": "Bearer b2ac5bfe-7d04-455b-870d-6e994da42008",
+                            "type": "default"
+                        }],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"dates\": []\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "localhost:8080/queue/make_dates_available/2",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "queue",
+                                "make_dates_available",
+                                "2"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create a Queue",
+                    "request": {
+                        "method": "POST",
+                        "header": [{
+                            "key": "Authorization",
+                            "value": "Bearer b2ac5bfe-7d04-455b-870d-6e994da42008",
+                            "type": "default"
+                        }],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"queue-1\",\n    \"interval\": 30,\n    \"start_time\": \"2006-01-02T15:04:05Z\",\n    \"end_time\": \"2006-01-02T15:04:05Z\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "localhost:8080/queue/create",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "queue",
+                                "create"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Reserve Slot",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "localhost:8080/queue/reserve_slot",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "queue",
+                                "reserve_slot"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Un Reserve a slot",
+                    "request": {
+                        "method": "DELETE",
+                        "header": []
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Queue",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [{
+                            "key": "Authorization",
+                            "value": "Bearer b2ac5bfe-7d04-455b-870d-6e994da42008",
+                            "type": "default"
+                        }],
+                        "url": {
+                            "raw": "localhost:8080/queue/delete/5",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "queue",
+                                "delete",
+                                "5"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ]
+}
