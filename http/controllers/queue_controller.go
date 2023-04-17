@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"errors"
+	"fmt"
 	"log"
 	"net/http"
 	"no-q-solution/domain/interfaces"
@@ -348,6 +349,9 @@ func (ctl QueueController) Create(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 
 	authHeader := r.Header.Get("Authorization")
+
+	fmt.Println(authHeader)
+	fmt.Println(r.Header)
 	if !strings.HasPrefix(authHeader, "Bearer ") {
 		err := errors.New("authorization token not found")
 		log.Println(err.Error())
