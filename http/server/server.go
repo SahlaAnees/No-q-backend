@@ -22,7 +22,10 @@ func NewHTTPServer(config config.Config, r *mux.Router) HTTPServer {
 	address := config.App.Host + ":" + strconv.Itoa(config.App.Port)
 
 	c := cors.New(cors.Options{
-		AllowedOrigins: []string{"*"},
+		AllowedOrigins:   []string{"*"},
+		AllowCredentials: true,
+		AllowedMethods:   []string{http.MethodGet, http.MethodPost, http.MethodOptions},
+		AllowedHeaders:   []string{"Authorization", "Content-Type", "Accept"},
 	})
 
 	handler := c.Handler(r)

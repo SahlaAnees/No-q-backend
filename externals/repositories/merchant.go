@@ -26,7 +26,7 @@ func (repo MerchantRepository) GetAll(ctx context.Context, paginator entities.Pa
 	offset := (paginator.Page - 1) * paginator.Size
 
 	query := `
-		SELECT id, name, category, facebook, instagram, website, created_at, updated_at
+		SELECT id, name, category, email, facebook, instagram, website, created_at, updated_at
 		FROM merchant ORDER BY id ASC LIMIT ? OFFSET ?;`
 
 	stmt, err := repo.db.PrepareContext(ctx, query)
@@ -52,6 +52,7 @@ func (repo MerchantRepository) GetAll(ctx context.Context, paginator entities.Pa
 			&merchant.ID,
 			&merchant.Name,
 			&merchant.Category,
+			&merchant.Email,
 			&merchant.Facebook,
 			&merchant.Instagram,
 			&merchant.Website,
@@ -115,7 +116,7 @@ func (repo MerchantRepository) GetCategories(ctx context.Context) ([]entities.Ca
 func (repo MerchantRepository) GetByCategory(ctx context.Context, category string) ([]entities.Merchant, error) {
 
 	query := `
-		SELECT id, name, category, facebook, instagram, website, created_at, updated_at
+		SELECT id, name, category, email, facebook, instagram, website, created_at, updated_at
 		FROM merchant WHERE category = ? ORDER BY id ASC;
 	`
 
@@ -142,6 +143,7 @@ func (repo MerchantRepository) GetByCategory(ctx context.Context, category strin
 			&merchant.ID,
 			&merchant.Name,
 			&merchant.Category,
+			&merchant.Email,
 			&merchant.Facebook,
 			&merchant.Instagram,
 			&merchant.Website,
@@ -189,7 +191,7 @@ func (repo MerchantRepository) GetSingle(ctx context.Context, id int64) (*entiti
 	merchant := entities.Merchant{}
 
 	query = `
-	SELECT id, name, category, facebook, instagram, website, created_at, updated_at
+	SELECT id, name, category, email, facebook, instagram, website, created_at, updated_at
 	FROM merchant WHERE id = ?;
 	`
 
@@ -206,6 +208,7 @@ func (repo MerchantRepository) GetSingle(ctx context.Context, id int64) (*entiti
 		&merchant.ID,
 		&merchant.Name,
 		&merchant.Category,
+		&merchant.Email,
 		&merchant.Facebook,
 		&merchant.Instagram,
 		&merchant.Website,
